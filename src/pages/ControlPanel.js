@@ -6,41 +6,28 @@ import Image3 from '../common/assets/Images/Image3.jpg';
 import Image4 from '../common/assets/Images/Image4.jpg';
 import Image5 from '../common/assets/Images/Image5.jpg';
 
-// Animation Variants
-const imageVariants = (direction) => ({
-    hidden: {
-        opacity: 0,
-        x: direction === 'left' ? -50 : direction === 'right' ? 50 : 0,
-        y: direction === 'up' ? -50 : direction === 'down' ? 50 : 0,
-    },
+// Simple fade-in animation
+const fadeIn = (delay = 0) => ({
+    hidden: { opacity: 0 },
     visible: {
         opacity: 1,
-        x: 0,
-        y: 0,
-        transition: { duration: 0.8, ease: 'easeOut' },
+        transition: { delay, duration: 0.8, ease: 'easeOut' },
     },
 });
-
-const listVariant = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            duration: 0.8,
-            ease: 'easeOut',
-            delay: 0.4,
-        },
-    },
-};
 
 const ControlPanel = () => {
     return (
         <section className="bg-light text-black py-16 font-poppins">
             <div className="max-w-7xl mx-auto px-6">
-                <h2 className="text-lg lg:text-3xl  font-bold text-commonColor text-center mb-12">
+                <motion.h2
+                    className="text-lg lg:text-3xl font-lora font-bold text-commonColor text-center mb-12"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={fadeIn(0.1)}
+                >
                     CONTROL PANEL & AUTOMATION PANEL
-                </h2>
+                </motion.h2>
 
                 <div className="flex flex-col lg:flex-row gap-10">
                     {/* Image Grid */}
@@ -51,7 +38,7 @@ const ControlPanel = () => {
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}
-                            variants={imageVariants('left')}
+                            variants={fadeIn(0.2)}
                         >
                             <img src={Image1} alt="Image1" className="w-full h-60 object-cover" />
                         </motion.div>
@@ -61,7 +48,7 @@ const ControlPanel = () => {
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}
-                            variants={imageVariants('right')}
+                            variants={fadeIn(0.3)}
                         >
                             <img src={Image2} alt="Image2" className="w-full h-60 object-cover" />
                         </motion.div>
@@ -74,7 +61,7 @@ const ControlPanel = () => {
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}
-                            variants={imageVariants('up')}
+                            variants={fadeIn(0.4)}
                         />
                         <motion.img
                             src={Image4}
@@ -83,7 +70,7 @@ const ControlPanel = () => {
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}
-                            variants={imageVariants('down')}
+                            variants={fadeIn(0.5)}
                         />
                         <motion.img
                             src={Image5}
@@ -92,17 +79,17 @@ const ControlPanel = () => {
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}
-                            variants={imageVariants('up')}
+                            variants={fadeIn(0.6)}
                         />
                     </div>
 
-                 
+                    {/* Feature List */}
                     <motion.div
-                        initial={{ opacity: 0, y: 50 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                        initial="hidden"
+                        whileInView="visible"
                         viewport={{ once: true }}
-                        transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="w-full lg:w-[400px] bg-gradient-to-br from-[#d6f2ff] to-[#f0f9ff] border border-blue-200 p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-500"
+                        variants={fadeIn(0.7)}
+                        className="w-full lg:w-[400px] border p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-500"
                     >
                         <h3 className="text-xl font-semibold text-commonColor mb-4 underline underline-offset-4">
                             We Offer:
@@ -119,7 +106,6 @@ const ControlPanel = () => {
                             <li>Junction box for general purpose</li>
                         </ul>
                     </motion.div>
-
                 </div>
             </div>
         </section>

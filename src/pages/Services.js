@@ -5,6 +5,8 @@ import Power from "../common/assets/power.jpg";
 import Farmax from "../common/assets/farmax.jpg";
 import Spare from "../common/assets/spare.jpg";
 import Amc from "../common/assets/amc.jpg";
+import ControlPanel from "./ControlPanel";
+import ElectricalPower from "./ElectricalPower";
 
 const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
@@ -50,10 +52,10 @@ const serviceData = [
 
 const Services = () => {
     return (
-        <section id="services" className="bg-light text-black py-16 font-poppins">
+        <section id="services" className="bg-light text-black py-24 font-poppins">
             <div className="max-w-7xl mx-auto px-6">
                 <motion.h2
-                    className="text-lg lg:text-3xl  font-bold text-center text-commonColor mb-12"
+                    className="text-2xl lg:text-3xl font-lora uppercase font-extrabold text-center text-commonColor mb-4 lg:mb-12"
                     initial="hidden"
                     animate="visible"
                     variants={fadeInUp}
@@ -76,7 +78,7 @@ const Services = () => {
                             <img
                                 src={service.image}
                                 alt={service.title}
-                                className="w-full h-48 object-cover"
+                                className="w-full h-48 object-cover border-b-2"
                             />
 
                             {/* Content */}
@@ -96,6 +98,9 @@ const Services = () => {
 
                 </div>
             </div>
+
+            <ControlPanel />
+            <ElectricalPower />
         </section>
     );
 };

@@ -34,7 +34,7 @@ const HomePage = () => {
           </motion.h3>
 
           <motion.h2
-            className="text-4xl md:text-5xl font-bold  text-commonColor"
+            className="text-2xl md:text-5xl font-bold font-lora text-commonColor"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5, duration: 0.6 }}
@@ -43,7 +43,7 @@ const HomePage = () => {
           </motion.h2>
 
           <motion.p
-            className="mt-4 text-base md:text-lg max-w-md mx-auto md:mx-0  text-gray-700"
+            className="mt-4 text-base md:text-lg max-w-md text-justify font-raleway mx-auto md:mx-0  text-gray-700"
             initial="hidden"
             animate="visible"
             custom={1.2}

@@ -6,17 +6,18 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        manrope: ['Manrope', 'sans-serif'],
-        'space-grotesk': ['Space Grotesk', 'sans-serif'],
-        josefin: ['Josefin Sans', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
+        josefin: ['Josefin Sans', 'sans-serif'],
+        manrope: ['Manrope', 'sans-serif'],
+        spaceGrotesk: ['Space Grotesk', 'sans-serif'],
+        raleway: ['Raleway', 'sans-serif'],
+        lora: ['Lora', 'serif'],
       },
       colors: {
         light: '#f9fafb',
-        commonColor: '#0060ec',
-        brandRed: '#f50000',
+        commonColor: '#004cba',
       },
     },
   },
   plugins: [],
-}
+};

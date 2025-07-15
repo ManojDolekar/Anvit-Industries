@@ -42,7 +42,7 @@ const OurCustomers = () => {
             <div className="max-w-7xl mx-auto px-6 text-center">
                 {/* Heading */}
                 <motion.h2
-                    className="text-lg lg:text-3xl  font-bold text-commonColor mb-12"
+                    className="text-2xl lg:text-3xl uppercase font-lora  font-bold text-commonColor mb-12"
                     initial="hidden"
                     animate="visible"
                     variants={fadeInUp}

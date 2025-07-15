@@ -46,7 +46,7 @@ const OurPartners = () => {
     <section id="partners" className="bg-light text-black py-16 font-poppins">
       <div className="max-w-7xl mx-auto px-6">
         <motion.h2
-          className="text-lg lg:text-3xl  font-bold text-center text-commonColor mb-12"
+          className="text-2xl lg:text-3xl font-lora uppercase font-bold text-center text-commonColor mb-12"
           initial="hidden"
           animate="visible"
           variants={fadeInUp}
