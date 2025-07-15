@@ -31,7 +31,7 @@ const VisionMission = () => {
     <section id="vision" className="bg-light text-black py-20 font-poppins">
       <div className="max-w-7xl mx-auto px-6">
         <motion.h2
-          className="text-3xl md:text-4xl font-bold text-center text-commonColor mb-16"
+          className="text-lg lg:text-3xl  font-bold text-center text-commonColor mb-16"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
