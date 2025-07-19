@@ -1,101 +1,108 @@
-import React from "react";
-import { motion } from "framer-motion";
-import Hero from "../common/assets/Hero.jpg";
+import { useEffect, useState, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import image1 from "../common/assets/Images/Image1.jpg";
+import image2 from "../common/assets/Images/Image2.jpg";
+import image3 from "../common/assets/Images/Image3.jpg";
+import image4 from "../common/assets/Images/Image4.jpg";
+import image5 from "../common/assets/Images/Image5.jpg";
 
-const textVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (delay = 0) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, delay },
-  }),
-};
+const images = [image1, image2, image3, image4, image5];
 
-const HomePage = () => {
-  const handleLinkClick = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+export default function ImageSlider() {
+  const [[current, direction], setCurrent] = useState([0, 0]);
+  const [isPaused, setIsPaused] = useState(false);
+
+  const changeSlide = useCallback(
+    (newDirection) => {
+      setCurrent(([prev]) => [
+        (prev + newDirection + images.length) % images.length,
+        newDirection,
+      ]);
+    },
+    [setCurrent]
+  );
+
+  useEffect(() => {
+    if (isPaused) return;
+    const interval = setInterval(() => changeSlide(1), 4000);
+    return () => clearInterval(interval);
+  }, [changeSlide, isPaused]);
+
+  useEffect(() => {
+    const handleKey = (e) => {
+      if (e.key === "ArrowRight") changeSlide(1);
+      if (e.key === "ArrowLeft") changeSlide(-1);
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [changeSlide]);
+
+  const variants = {
+    enter: (direction) => ({
+      x: direction > 0 ? 300 : -300,
+      opacity: 0,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+    },
+    exit: (direction) => ({
+      x: direction < 0 ? 300 : -300,
+      opacity: 0,
+    }),
   };
 
   return (
-    <section className="min-h-screen bg-light text-black pt-14 flex items-center justify-center font-poppins overflow-hidden">
-      <div className="max-w-7xl px-6 py-12 w-full flex flex-col-reverse md:flex-row items-center justify-between gap-10">
-        <div className="flex-1 text-center md:text-left">
-          <motion.h3
-            className="text-lg  mb-1"
-            initial="hidden"
-            animate="visible"
-            custom={0}
-            variants={textVariants}
-          >
-            Welcome to
-          </motion.h3>
+      <div
+        className="relative w-full mx-auto max-w-[1480px] mt-24  aspect-video sm:h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
+        {/* Overlay Layer */}
+        <div className="absolute inset-0 bg-black/60 z-10 pointer-events-none  " />
 
-          <motion.h2
-            className="text-2xl md:text-5xl font-bold font-lora text-commonColor"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.5, duration: 0.6 }}
-          >
-            <span > Electrical Power</span> Management Experts
-          </motion.h2>
+        <AnimatePresence initial={false} custom={direction}>
+          <motion.img
+            key={current}
+            src={images[current]}
+            custom={direction}
+            variants={variants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{
+              x: { type: "spring", stiffness: 300, damping: 30 },
+              opacity: { duration: 0.4 },
+            }}
+            className="absolute top-0 left-0 w-full h-full object-cover"
+          />
+        </AnimatePresence>
 
-          <motion.p
-            className="mt-4 text-base md:text-lg max-w-md text-justify font-raleway mx-auto md:mx-0  text-gray-700"
-            initial="hidden"
-            animate="visible"
-            custom={1.2}
-            variants={textVariants}
-          >
-            We specialize in electrical power management, system integration, and industrial automation. Our expert team delivers innovative solutions for efficient energy use, reduced downtime, and reliable operations.
-          </motion.p>
-
-          <motion.div className="flex justify-center md:justify-start gap-4 mt-6 flex-wrap">
-            <motion.button
-              onClick={() => handleLinkClick("treatments")}
-              className="bg-commonColor  text-white px-6 py-3 rounded-full font-semibold shadow-md transition-all duration-300"
-              initial="hidden"
-              animate="visible"
-              variants={textVariants}
-              custom={2.0}
-              aria-label="Our Services"
-            >
-              Our Services
-            </motion.button>
-
-            <motion.button
-              onClick={() => handleLinkClick("contact")}
-              className="border border-commonColor text-commonColor px-6 py-3 rounded-full font-semibold hover:bg-green-50 transition-all duration-300"
-              initial="hidden"
-              animate="visible"
-              variants={textVariants}
-              custom={2.2}
-              aria-label="Contact Us"
-            >
-              Contact Us
-            </motion.button>
-          </motion.div>
+        {/* Navigation dots */}
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20 flex gap-2">
+          {images.map((_, i) => (
+            <div
+              key={i}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                i === current ? "bg-white scale-125" : "bg-white/50"
+              }`}
+            />
+          ))}
         </div>
 
-        <motion.div
-          className="flex-1"
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
+        {/* Prev/Next arrows */}
+        <button
+          onClick={() => changeSlide(-1)}
+          className="absolute left-3 top-1/2 -translate-y-1/2  text-7xl text-white/50 rounded-full p-2 z-20 transition-transform hover:scale-110"
         >
-          <img
-            src={Hero}
-            alt="Electrical Power Management and Automation"
-            className="w-[500px] h-auto mx-auto"
-            loading="eager"
-            fetchpriority="high"
-          />
-        </motion.div>
+          ‹
+        </button>
+        <button
+          onClick={() => changeSlide(1)}
+          className="absolute right-3 top-1/2 -translate-y-1/2  text-7xl text-white/50 rounded-full p-2 z-20 transition-transform hover:scale-110 "
+        >
+          ›
+        </button>
       </div>
-    </section>
   );
-};
-
-export default HomePage;
+}

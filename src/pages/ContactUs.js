@@ -4,16 +4,10 @@ import { Mail, Phone, MapPin } from 'lucide-react';
 function ContactUs() {
   const contactItems = [
     {
-      icon: <Phone size={24} className="text-white" />,
-      title: 'Phone',
-      value: '+91 98765 43210',
-      link: 'tel:+919876543210',
-    },
-    {
       icon: <Mail size={24} className="text-white" />,
       title: 'Email',
-      value: 'contact@invintindustries.com',
-      link: 'mailto:contact@invintindustries.com',
+      value: 'anvitindustries22@gmail.com',
+      link: 'mailto:anvitindustries22@gmail.com',
     },
     {
       icon: <MapPin size={24} className="text-white" />,
@@ -33,7 +27,7 @@ function ContactUs() {
           Have questions or need support? We’re here to assist you with everything related to our products and services.
         </p>
 
-        <div className="grid md:grid-cols-3 gap-10">
+        <div className="grid md:grid-cols-2 gap-10">
           {contactItems.map((item, index) => (
             <div
               key={index}

@@ -23,10 +23,11 @@ function Navbar() {
     };
 
     return (
-        <nav className="fixed top-0 left-0 w-full bg-light z-50 transition-all duration-300">
-            <div className="max-w-7xl mx-auto p-5 flex justify-between items-center">
+        <nav className="fixed top-0 left-0 px-4 bg-light mx-auto w-full  z-50 transition-all duration-300  ">
+            <div className="max-w-7xl mx-auto p-4 flex justify-between items-center">
                 <div className="flex gap-2 justify-center items-center">
                     <img src={Logo} alt="logo" className='h-12' />
+                    <span className=' font-bold text-2xl bg-gradient-to-tr from-blue-600 to-red-600 bg-clip-text text-transparent'>Anvit Industries </span> 
                 </div>
 
                 <ul className="hidden md:flex gap-6 font-josefin text-xl">

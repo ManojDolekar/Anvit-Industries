@@ -22,7 +22,7 @@ function Footer() {
 
     return (
         <footer className="bg-[#e8f0f4] text-[#161b22] py-12 px-6 md:px-12 transition-colors duration-300">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2  gap-10">
 
                 {/* Branding */}
                 <div>
@@ -35,9 +35,9 @@ function Footer() {
                 </div>
 
                 {/* Navigation */}
-                <div>
+                <div className='flex flex-col items-center '>
                     <h4 className="font-semibold font-josefin mb-3">Quick Links</h4>
-                    <ul className="flex flex-col gap-2 text-sm font-raleway ">
+                    <ul className="flex flex-col items-center gap-2 text-sm font-raleway ">
                         <li>
                             <button onClick={() => handleLinkClick('home')} className={activeSection === 'home' ? activeClass : normalClass}>
                                 Home
@@ -66,47 +66,6 @@ function Footer() {
                     </ul>
                 </div>
 
-                {/* Social Links */}
-                <div>
-                    <h4 className="font-semibold font-josefin mb-3">Follow Us</h4>
-                    <div className="flex gap-4 text-xl">
-                        <a
-                            href="#"
-                            target="_blank"
-                            rel="noreferrer"
-                            aria-label="Visit our LinkedIn"
-                            className="hover:text-darkAccent dark:hover:text-lightAccent"
-                        >
-                            <FaLinkedin />
-                        </a>
-                        <a
-                            href="#"
-                            target="_blank"
-                            rel="noreferrer"
-                            aria-label="Visit our GitHub"
-                            className="hover:text-darkAccent dark:hover:text-lightAccent"
-                        >
-                            <FaGithub />
-                        </a>
-                        <a
-                            href="mailto:lifofytech@gmail.com"
-                            aria-label="Send us an email"
-                            className="hover:text-darkAccent dark:hover:text-lightAccent"
-                        >
-                            <FaEnvelope />
-                        </a>
-                        <a
-                            href="#"
-                            target="_blank"
-                            rel="noreferrer"
-                            aria-label="Visit our Instagram"
-                            className="hover:text-darkAccent dark:hover:text-lightAccent"
-                        >
-                            <FaInstagram />
-                        </a>
-                    </div>
-                </div>
-
             </div>
 
             {/* Bottom Note */}
@@ -118,3 +77,4 @@ function Footer() {
 }
 
 export default Footer;
+
