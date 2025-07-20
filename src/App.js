@@ -4,7 +4,7 @@ import ScrollToTop from './common/ScrollToTop'
 
 function App() {
   return (
-    <div>
+    <div >
       <ScrollToTop />
       <Routes />
     </div>

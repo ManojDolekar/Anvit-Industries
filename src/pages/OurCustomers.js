@@ -38,11 +38,11 @@ const customers = [
 
 const OurCustomers = () => {
     return (
-        <section id="customers" className="bg-light text-black py-16 font-poppins">
+        <section id="customers" className="bg-secondarybg text-black py-16 font-poppins">
             <div className="max-w-7xl mx-auto px-6 text-center">
                 {/* Heading */}
                 <motion.h2
-                    className="text-2xl lg:text-3xl uppercase font-lora  font-bold text-commonColor mb-12"
+                    className="text-2xl lg:text-3xl uppercase font-poppins  font-bold bg-gradient-to-tr from-acent to-successgreen text-transparent bg-clip-text mb-12"
                     initial="hidden"
                     animate="visible"
                     variants={fadeInUp}

@@ -24,6 +24,10 @@ module.exports = {
         emeraldGreen: '#00b894',
         techViolet: '#6c5ce7',
         techBlue: '#0984e3',
+        graybg:'#1f2937',
+        secondarybg:'#374151',
+        acent:'#06b6d4',
+        successgreen:'#10b981',
       },
       animation: {
         marquee: "marquee 10s linear infinite",

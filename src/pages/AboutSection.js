@@ -98,29 +98,29 @@ const fadeIn = {
 
 export default function AboutSection() {
   return (
-    <section className="relative w-full min-h-screen py-20 px-6 bg-gradient-to-br from-[#f0f4ff] via-[#ecf0f6] to-white flex items-center justify-center font-poppins">
+    <section className="relative w-full min-h-screen py-20 px-6 bg-secondarybg flex items-center justify-center font-poppins">
       {/* Decorative floating icon */}
       <div className="absolute top-16 left-4 sm:top-16 sm:left-4 md:top-20 md:left-20 lg:top-36 lg:left-80 w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-xl shadow-indigo-100 border border-indigo-200 animate-bounce z-10">
-        <Lightbulb className="text-indigo-600 w-7 h-7" />
+        <Lightbulb className="text-successgreen w-7 h-7" />
       </div>
 
       {/* Main Container */}
       <motion.div
-        className="max-w-5xl w-full bg-white/60 backdrop-blur-lg border border-white/30 rounded-3xl shadow-[0_20px_60px_-10px_rgba(0,0,0,0.15)] p-10 md:p-16"
+        className="font-poppins max-w-5xl w-full bg-transparent backdrop-blur-lg border border-white/30 rounded-3xl hover:shadow-[0_20px_60px_-10px_rgba(203,213,225,0.15)] p-10 md:p-16 delay-100 duration-200 "
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
         variants={containerVariants}
       >
         <motion.h2
-          className="text-4xl font-bold text-indigo-700 text-center mb-6"
+          className="text-4xl font-bold bg-gradient-to-tr from-acent to-successgreen bg-clip-text text-transparent text-center mb-6"
           variants={fadeIn}
         >
-          About Us
+          ABOUT US
         </motion.h2>
 
         <motion.p
-          className="text-base sm:text-lg text-gray-700 text-center mb-8 leading-relaxed"
+          className="text-base sm:text-lg text-white/90 text-center mb-8 leading-relaxed"
           variants={fadeIn}
         >
           Building smart industrial solutions with precision, passion, and purpose.
@@ -128,8 +128,8 @@ export default function AboutSection() {
 
         <motion.div className="grid md:grid-cols-2 gap-8" variants={containerVariants}>
           <motion.div variants={fadeIn}>
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">Who We Are</h3>
-            <p className="text-gray-700 text-justify leading-relaxed">
+            <h3 className="text-[1.4em] text-xl font-semibold text-white mb-3">Who We Are</h3>
+            <p className="text-white/80 text-justify leading-relaxed">
               We are a passionate team of engineers, innovators, and problem-solvers
               who specialize in industrial automation, control panels, and power management.
               With over a decade of experience, we craft scalable, intelligent, and reliable
@@ -138,8 +138,8 @@ export default function AboutSection() {
           </motion.div>
 
           <motion.div variants={fadeIn}>
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">Our Mission</h3>
-            <p className="text-gray-700 text-justify leading-relaxed">
+            <h3 className=" text-[1.4em] font-semibold text-white mb-3">Our Mission</h3>
+            <p className="text-white/80 text-justify leading-relaxed">
               Our mission is to revolutionize the way industries interact with technology.
               We deliver custom electrical solutions designed to boost efficiency,
               reduce energy consumption, and simplify complex operations across diverse sectors.
@@ -149,9 +149,11 @@ export default function AboutSection() {
 
         <motion.div className="text-center mt-10" variants={fadeIn}>
           <Link to='/services'>
-          <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-full text-sm md:text-base shadow-lg transition duration-300 ease-in-out">
+          <div className="bg-gradient-to-tr from-acent to-successgreen bg-clip-border border-transparent border-2 rounded-full inline-block shadow-lg transition duration-300 ease-in-out hover:scale-105 hover:-translate-y-1  hover:shadow-successgreen/20">
+          <button className=" bg-secondarybg text-white px-6 py-3 rounded-full text-sm md:text-base ">
             Explore Our Services
           </button>
+          </div>
           </Link>
         </motion.div>
       </motion.div>

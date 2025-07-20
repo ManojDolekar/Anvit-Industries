@@ -151,7 +151,7 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="bg-gradient-to-br from-gray-50 to-white py-24 font-poppins text-black"
+      className="bg-gradient-to-br from-gray-50 to-white pt-24 font-poppins text-black"
     >
       <div className="max-w-7xl mx-auto px-6">
         {/* Heading */}
