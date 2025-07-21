@@ -112,9 +112,9 @@ const logos = [
 
 const OurPartners = () => {
   return (
-    <section id="partners" className="w-full bg-light py-16 font-poppins text-black">
+    <section id="partners" className="w-full py-16 font-poppins text-black">
       <div className="w-full mx-auto px-2">
-        <h2 className="text-3xl lg:text-4xl font-bold text-center text-indigo-700 mb-10">
+        <h2 className="text-3xl lg:text-4xl font-bold text-center bg-gradient-to-tr from-acent to-successgreen bg-clip-text text-transparent mb-10">
           Our Channel Partners
         </h2>
 

@@ -98,7 +98,7 @@ const fadeIn = {
 
 export default function AboutSection() {
   return (
-    <section className="relative w-full min-h-screen py-20 px-6 bg-secondarybg flex items-center justify-center font-poppins">
+    <section className="relative w-full min-h-screen py-20 px-6  flex items-center justify-center font-poppins">
       {/* Decorative floating icon */}
       <div className="absolute top-16 left-4 sm:top-16 sm:left-4 md:top-20 md:left-20 lg:top-36 lg:left-80 w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-xl shadow-indigo-100 border border-indigo-200 animate-bounce z-10">
         <Lightbulb className="text-successgreen w-7 h-7" />

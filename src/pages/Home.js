@@ -7,7 +7,7 @@ import ContactUs from './ContactUs'
 
 function Home() {
     return (
-        <div>
+        <div className='bg-gradient-to-tr from-graybg to-secondarybg'>
             <HomePage />
             <div id="about">
                 <AboutSection />

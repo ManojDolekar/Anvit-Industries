@@ -132,7 +132,7 @@ export default function SwiperCarousel() {
   }, []);
 
   return (
-    <div className= " relative mt-[76px] w-full h-screen overflow-hidden bg-black">
+    <div className= " relative w-full h-screen overflow-hidden bg-black">
       {/* Main carousel container */}
       <div 
         className="relative w-full h-full"

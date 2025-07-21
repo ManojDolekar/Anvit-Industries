@@ -38,7 +38,7 @@ const customers = [
 
 const OurCustomers = () => {
     return (
-        <section id="customers" className="bg-secondarybg text-black py-16 font-poppins">
+        <section id="customers" className=" text-black py-16 font-poppins">
             <div className="max-w-7xl mx-auto px-6 text-center">
                 {/* Heading */}
                 <motion.h2

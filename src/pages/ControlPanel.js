@@ -17,7 +17,7 @@ const fadeIn = (delay = 0) => ({
 
 const ControlPanel = () => {
     return (
-        <section className="bg-light text-black py-16 font-poppins">
+        <section className="bg-[#F1F8FE] text-black py-16 font-poppins">
             <div className="max-w-7xl mx-auto px-6">
                 <motion.h2
                     className="text-lg lg:text-3xl font-lora font-bold text-commonColor text-center mb-12"
