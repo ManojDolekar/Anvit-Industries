@@ -1,162 +1,278 @@
-// import React from "react";
-// import { motion } from "framer-motion";
-
-// const fadeInStagger = {
-//   hidden: {},
-//   visible: {
-//     transition: {
-//       staggerChildren: 0.2,
-//     },
-//   },
-// };
-
-// const fadeInUp = {
-//   hidden: { opacity: 0, y: 20 },
-//   visible: {
-//     opacity: 1,
-//     y: 0,
-//     transition: {
-//       duration: 0.6,
-//       ease: "easeOut",
-//     },
-//   },
-// };
-
-// const AboutSection = () => {
-//   return (
-//     <section className="min-h-screen flex justify-center items-center bg-gradient-to-br from-white via-gray-100 to-gray-200 py-10 font-poppins text-black">
-//       <div className="max-w-5xl mx-auto px-6">
-//         {/* Heading */}
-//         <motion.h2
-//           className="text-3xl lg:text-4xl uppercase font-lora font-bold text-center text-commonColor mb-10"
-//           initial="hidden"
-//           whileInView="visible"
-//           viewport={{ once: true, amount: 0.4 }}
-//           variants={fadeInUp}
-//         >
-//           About Us
-//         </motion.h2>
-
-//         {/* Animated Text Content */}
-//         <motion.div
-//           className="bg-white/70 backdrop-blur-md p-6 md:p-10 rounded-xl shadow-xl"
-//           initial="hidden"
-//           whileInView="visible"
-//           viewport={{ once: true, amount: 0.4 }}
-//           variants={fadeInStagger}
-//         >
-//           <motion.h3
-//             className="text-2xl font-semibold mb-6 text-gray-800"
-//             variants={fadeInUp}
-//           >
-//             Who We Are
-//           </motion.h3>
-
-//           <motion.p
-//             className="text-gray-700 leading-relaxed text-base mb-4 text-justify"
-//             variants={fadeInUp}
-//           >
-//             We are a passionate team of engineers, innovators, and problem-solvers dedicated to empowering industries through advanced automation and energy solutions. With over a decade of experience, we specialize in control panels, power management systems, and industrial automation.
-//           </motion.p>
-
-//           <motion.p
-//             className="text-gray-700 leading-relaxed text-base text-justify"
-//             variants={fadeInUp}
-//           >
-//             Our mission is to deliver reliable, scalable, and cost-effective electrical solutions that drive performance and efficiency. We work closely with clients across multiple sectors to tailor our services to their exact needs.
-//           </motion.p>
-//         </motion.div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default AboutSection;
-
 import React from "react";
 import { motion } from "framer-motion";
-import { Lightbulb } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Lightbulb, ArrowRight, Sparkles } from "lucide-react";
 
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
+const AboutSection = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1
+      }
+    }
+  };
 
-const fadeIn = {
-  hidden: { opacity: 0, y: 40 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7, ease: "easeOut" },
-  },
-};
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.25, 0.25, 0, 1]
+      }
+    }
+  };
 
-export default function AboutSection() {
+  const scaleIn = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
-    <section className="relative w-full min-h-screen py-20 px-6  flex items-center justify-center font-poppins">
-      {/* Decorative floating icon */}
-      <div className="absolute top-16 left-4 sm:top-16 sm:left-4 md:top-20 md:left-20 lg:top-36 lg:left-80 w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-xl shadow-indigo-100 border border-indigo-200 animate-bounce z-10">
-        <Lightbulb className="text-successgreen w-7 h-7" />
+    <section className="relative min-h-screen bg-gradient-to-b from-blue-50 via-indigo-50 to-purple-50 overflow-hidden">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0">
+        <motion.div 
+          className="absolute top-20 left-10 w-80 h-80 bg-gradient-to-r from-blue-200/30 to-indigo-200/30 rounded-full blur-3xl"
+          animate={{
+            y: [-20, 20, -20],
+            x: [-10, 10, -10],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        <motion.div 
+          className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-purple-200/30 to-pink-200/30 rounded-full blur-3xl"
+          animate={{
+            y: [20, -20, 20],
+            x: [10, -10, 10],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        <motion.div 
+          className="absolute top-1/3 right-1/4 w-64 h-64 bg-gradient-to-r from-emerald-200/20 to-teal-200/20 rounded-full blur-3xl"
+          animate={{
+            scale: [1, 1.3, 1],
+            rotate: [0, 180, 360],
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
       </div>
 
-      {/* Main Container */}
-      <motion.div
-        className="font-poppins max-w-5xl w-full bg-transparent backdrop-blur-lg border border-white/30 rounded-3xl hover:shadow-[0_20px_60px_-10px_rgba(203,213,225,0.15)] p-10 md:p-16 delay-100 duration-200 "
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={containerVariants}
+      {/* Floating Geometric Shapes */}
+      {[...Array(15)].map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute opacity-40"
+          style={{
+            left: `${10 + Math.random() * 80}%`,
+            top: `${10 + Math.random() * 80}%`,
+          }}
+          animate={{
+            y: [-15, 15, -15],
+            rotate: [0, 360],
+            opacity: [0.2, 0.6, 0.2],
+          }}
+          transition={{
+            duration: 4 + Math.random() * 4,
+            repeat: Infinity,
+            delay: Math.random() * 2,
+            ease: "easeInOut"
+          }}
+        >
+          {i % 3 === 0 ? (
+            <div className="w-3 h-3 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full" />
+          ) : i % 3 === 1 ? (
+            <div className="w-3 h-3 bg-gradient-to-br from-purple-400 to-pink-500 rotate-45" />
+          ) : (
+            <div className="w-3 h-3 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-sm rotate-12" />
+          )}
+        </motion.div>
+      ))}
+
+      {/* Floating Icon */}
+      <motion.div 
+        className="absolute top-20 right-20 z-20"
+        animate={{
+          y: [-10, 10, -10],
+          rotate: [0, 5, -5, 0],
+        }}
+        transition={{
+          duration: 4,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
       >
-        <motion.h2
-          className="text-4xl font-bold bg-gradient-to-tr from-acent to-successgreen bg-clip-text text-transparent text-center mb-6"
-          variants={fadeIn}
-        >
-          ABOUT US
-        </motion.h2>
-
-        <motion.p
-          className="text-base sm:text-lg text-white/90 text-center mb-8 leading-relaxed"
-          variants={fadeIn}
-        >
-          Building smart industrial solutions with precision, passion, and purpose.
-        </motion.p>
-
-        <motion.div className="grid md:grid-cols-2 gap-8" variants={containerVariants}>
-          <motion.div variants={fadeIn}>
-            <h3 className="text-[1.4em] text-xl font-semibold text-white mb-3">Who We Are</h3>
-            <p className="text-white/80 text-justify leading-relaxed">
-              We are a passionate team of engineers, innovators, and problem-solvers
-              who specialize in industrial automation, control panels, and power management.
-              With over a decade of experience, we craft scalable, intelligent, and reliable
-              systems that keep businesses moving forward.
-            </p>
-          </motion.div>
-
-          <motion.div variants={fadeIn}>
-            <h3 className=" text-[1.4em] font-semibold text-white mb-3">Our Mission</h3>
-            <p className="text-white/80 text-justify leading-relaxed">
-              Our mission is to revolutionize the way industries interact with technology.
-              We deliver custom electrical solutions designed to boost efficiency,
-              reduce energy consumption, and simplify complex operations across diverse sectors.
-            </p>
-          </motion.div>
-        </motion.div>
-
-        <motion.div className="text-center mt-10" variants={fadeIn}>
-          <Link to='/services'>
-          <div className="bg-gradient-to-tr from-acent to-successgreen bg-clip-border border-transparent border-2 rounded-full inline-block shadow-lg transition duration-300 ease-in-out hover:scale-105 hover:-translate-y-1  hover:shadow-successgreen/20">
-          <button className=" bg-secondarybg text-white px-6 py-3 rounded-full text-sm md:text-base ">
-            Explore Our Services
-          </button>
-          </div>
-          </Link>
-        </motion.div>
+        <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-2xl shadow-indigo-200">
+          <Lightbulb className="text-white w-8 h-8" />
+        </div>
       </motion.div>
+
+      <div className="relative z-10 container mx-auto px-6 py-20">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={containerVariants}
+          className="max-w-6xl mx-auto"
+        >
+          {/* Header */}
+          <motion.div variants={fadeInUp} className="text-center mb-16">
+            <motion.div 
+              className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-indigo-200/50 mb-6 shadow-lg"
+              whileHover={{ scale: 1.05, y: -2 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
+              <Sparkles className="w-4 h-4 text-indigo-500" />
+              <span className="text-indigo-600 text-sm font-medium">About Our Company</span>
+            </motion.div>
+
+            <motion.h2
+              className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-6"
+              variants={scaleIn}
+            >
+              ABOUT US
+            </motion.h2>
+
+            <motion.p
+              className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed"
+              variants={fadeInUp}
+            >
+              Building smart industrial solutions with precision, passion, and purpose.
+            </motion.p>
+          </motion.div>
+
+          {/* Main Content Card */}
+          <motion.div
+            variants={fadeInUp}
+            className="relative"
+          >
+            <motion.div 
+              className="bg-white/60 backdrop-blur-xl border border-white/40 rounded-3xl p-8 md:p-12 shadow-2xl shadow-indigo-100/50"
+              whileHover={{ 
+                y: -8,
+                boxShadow: "0 32px 64px -12px rgba(99, 102, 241, 0.15)"
+              }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="grid md:grid-cols-2 gap-12">
+                {/* Who We Are */}
+                <motion.div variants={fadeInUp}>
+                  <motion.div
+                    className="flex items-center mb-4"
+                    whileHover={{ scale: 1.02 }}
+                  >
+                    <div className="w-2 h-2 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full mr-3"></div>
+                    <h3 className="text-2xl font-bold text-slate-800">Who We Are</h3>
+                  </motion.div>
+                  <motion.p
+                    className="text-slate-600 leading-relaxed text-justify"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ delay: 0.3, duration: 0.8 }}
+                  >
+                    We are a passionate team of engineers, innovators, and problem-solvers
+                    who specialize in industrial automation, control panels, and power management.
+                    With over a decade of experience, we craft scalable, intelligent, and reliable
+                    systems that keep businesses moving forward.
+                  </motion.p>
+                </motion.div>
+
+                {/* Our Mission */}
+                <motion.div variants={fadeInUp}>
+                  <motion.div
+                    className="flex items-center mb-4"
+                    whileHover={{ scale: 1.02 }}
+                  >
+                    <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full mr-3"></div>
+                    <h3 className="text-2xl font-bold text-slate-800">Our Mission</h3>
+                  </motion.div>
+                  <motion.p
+                    className="text-slate-600 leading-relaxed text-justify"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ delay: 0.5, duration: 0.8 }}
+                  >
+                    Our mission is to revolutionize the way industries interact with technology.
+                    We deliver custom electrical solutions designed to boost efficiency,
+                    reduce energy consumption, and simplify complex operations across diverse sectors.
+                  </motion.p>
+                </motion.div>
+              </div>
+
+              {/* CTA Button */}
+              <motion.div 
+                className="text-center mt-12"
+                variants={fadeInUp}
+              >
+                <motion.button
+                  className="group relative inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-indigo-500 via-purple-600 to-pink-600 rounded-full text-white font-semibold text-lg shadow-xl shadow-indigo-200/50 overflow-hidden"
+                  whileHover={{ 
+                    scale: 1.05,
+                    y: -2,
+                    boxShadow: "0 25px 50px -12px rgba(99, 102, 241, 0.4)"
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {/* Animated background */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 opacity-0 group-hover:opacity-100"
+                    initial={false}
+                    transition={{ duration: 0.3 }}
+                  />
+                  
+                  <span className="relative z-10">Explore Our Services</span>
+                  <motion.div
+                    className="relative z-10"
+                    animate={{ x: [0, 4, 0] }}
+                    transition={{ 
+                      duration: 2, 
+                      repeat: Infinity,
+                      ease: "easeInOut" 
+                    }}
+                  >
+                    <ArrowRight className="w-5 h-5" />
+                  </motion.div>
+                  
+                  {/* Shine effect */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12"
+                    animate={{ x: ["-100%", "100%"] }}
+                    transition={{ 
+                      duration: 3, 
+                      repeat: Infinity, 
+                      repeatDelay: 2 
+                    }}
+                  />
+                </motion.button>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
+      </div>
     </section>
   );
-}
+};
+
+export default AboutSection;

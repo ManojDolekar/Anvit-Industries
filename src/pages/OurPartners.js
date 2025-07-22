@@ -112,11 +112,14 @@ const logos = [
 
 const OurPartners = () => {
   return (
-    <section id="partners" className="w-full py-16 font-poppins text-black">
+    <section id="partners" className="w-full py-16 bg-gradient-to-t from-slate-50 via-white/90 to-pink-50 font-poppins text-black">
       <div className="w-full mx-auto px-2">
-        <h2 className="text-3xl lg:text-4xl font-bold text-center bg-gradient-to-tr from-acent to-successgreen bg-clip-text text-transparent mb-10">
+        <h2 className="text-5xl md:text-5xl font-bold text-center bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-700 bg-clip-text text-transparent mb-4">
           Our Channel Partners
         </h2>
+        <p className="text-xl text-slate-600 max-w-4xl mx-auto mb-2 leading-relaxed">
+            Collaborating with industry leaders to deliver excellence and innovation in every project
+          </p>
 
         <div className="relative overflow-hidden">
           <div className="flex gap-10 animate-marquee p-2 whitespace-nowrap">

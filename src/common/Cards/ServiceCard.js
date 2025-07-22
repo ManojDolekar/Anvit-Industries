@@ -61,8 +61,16 @@ function ServiceCard({ data }) {
   const mouseY = useMotionValue(0);
   
   // Spring animations for smooth movement
-  const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [10, -10]));
-  const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-10, 10]));
+  const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [3, -3]), {
+  stiffness: 60,
+  damping: 10,
+});
+
+const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-3, 3]), {
+  stiffness: 60,
+  damping: 10,
+});
+
   
   // Handle mouse movement for 3D effect
   const handleMouseMove = (e) => {
@@ -75,6 +83,7 @@ function ServiceCard({ data }) {
     const x = (e.clientX - centerX) / (rect.width / 2);
     const y = (e.clientY - centerY) / (rect.height / 2);
     
+    // card tilt effect
     mouseX.set(x);
     mouseY.set(y);
     
@@ -93,7 +102,7 @@ function ServiceCard({ data }) {
   return (
     <motion.div
       ref={cardRef}
-      className="relative group cursor-pointer select-none w-full max-w-[440px]"
+      className="relative group cursor-pointer select-none  w-full max-w-[440px]"
       style={{
         perspective: 1000,
       }}
@@ -109,7 +118,7 @@ function ServiceCard({ data }) {
     >
               {/* Main Card Container */}
       <motion.div
-        className="relative w-full h-96 overflow-hidden"
+        className="relative w-full h-96 rounded-2xl overflow-hidden"
         style={{
           rotateX,
           rotateY,
@@ -131,7 +140,7 @@ function ServiceCard({ data }) {
           />
           
           {/* Image Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-white via-white/70 to-transparent" />
         </div>
         
         {/* Light Background Base */}

@@ -60,13 +60,13 @@ function OurService() {
         <div className='relative w-full grid-flow-col justify-center items-center'>
             <div className='absolute top-o left-0 w-full h-fit '>
                 <div className='absolute top-o left-0 w-full h-fit'>
-                <img src={wavebg} className=''/>
+                <img src={wavebg} className=' '/>
                 </div>
-                <h1 className='  flex justify-center text-black/85 absolute font-bold left-1/3 text-5xl top-44 '>
+                <h1 className='  flex justify-center text-black/70 absolute font-bold md:left-[40%] left-24   text-5xl top-44 '>
                     Our Services
                 </h1>
             </div>
-            <div className=' w-full items-center pt-[400px] mx-7 grid md:grid-cols-3 sm:grid-cols-1 gap-4'>
+            <div className=' w-full items-center pt-[300px] md:pt-[400px] mx-7 grid md:grid-cols-3 sm:grid-cols-1 gap-4'>
                 {serviceData.map(data=>(
                 <ServiceCard data={data}/>
                 ))}
