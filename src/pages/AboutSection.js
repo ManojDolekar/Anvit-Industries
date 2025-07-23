@@ -39,7 +39,7 @@ const AboutSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-b from-blue-50 via-indigo-50 to-purple-50 overflow-hidden">
+    <section className="relative min-h-screen bg-gradient-to-b from-blue-50 via-indigo-50 to-white overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         <motion.div 
@@ -124,7 +124,7 @@ const AboutSection = () => {
           ease: "easeInOut"
         }}
       >
-        <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-2xl shadow-indigo-200">
+        <div className="w-16 h-16 bg-gradient-to-br from-yellow-300 to-orange-300 rounded-2xl flex items-center justify-center shadow-2xl shadow-indigo-200">
           <Lightbulb className="text-white w-8 h-8" />
         </div>
       </motion.div>
@@ -144,15 +144,15 @@ const AboutSection = () => {
               whileHover={{ scale: 1.05, y: -2 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
-              <Sparkles className="w-4 h-4 text-indigo-500" />
-              <span className="text-indigo-600 text-sm font-medium">About Our Company</span>
+              <Sparkles className="w-4 h-4 text-orange-600" />
+              <span className="text-orange-700 text-sm font-medium">About Our Company</span>
             </motion.div>
 
             <motion.h2
-              className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-6"
+              className="text-5xl capitalize md:text-6xl font-bold bg-gradient-to-r from-orange-600 via-red-600 to-pink-700 bg-clip-text text-transparent mb-6"
               variants={scaleIn}
             >
-              ABOUT US
+              About us  
             </motion.h2>
 
             <motion.p
@@ -227,7 +227,7 @@ const AboutSection = () => {
                 variants={fadeInUp}
               >
                 <motion.button
-                  className="group relative inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-indigo-500 via-purple-600 to-pink-600 rounded-full text-white font-semibold text-lg shadow-xl shadow-indigo-200/50 overflow-hidden"
+                  className="group relative inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-orange-500 via-red-500 to-pink-600 rounded-full text-white font-semibold text-lg shadow-xl shadow-indigo-200/50 overflow-hidden"
                   whileHover={{ 
                     scale: 1.05,
                     y: -2,
@@ -237,7 +237,7 @@ const AboutSection = () => {
                 >
                   {/* Animated background */}
                   <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 opacity-0 group-hover:opacity-100"
+                    className="absolute inset-0 bg-gradient-to-r from-red-600 via-pink-600 to-rose-600 opacity-0 group-hover:opacity-100"
                     initial={false}
                     transition={{ duration: 0.3 }}
                   />

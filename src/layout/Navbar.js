@@ -54,7 +54,7 @@ function Navbar() {
     return (
         <nav
             className={`w-full z-50 fixed top-0 left-0 transform transition-all duration-500 ease-in-out ${navbarAnimationClass} ${
-                isOnTop ? 'bg-transparent' : 'bg-[#ececec] backdrop-blur-md shadow-xl '
+                isOnTop ? 'bg-transparent' : 'bg-[#ececec] backdrop-blur-md shadow-xl border-b border-blue-200/50'
             }`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

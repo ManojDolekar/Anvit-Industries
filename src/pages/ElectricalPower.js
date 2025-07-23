@@ -290,10 +290,10 @@ const ElectricalPower = () => {
               <Crown className="w-8 h-8 text-blue-500/30 animate-pulse delay-500" />
             </div>
             
-            <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-purple-700 via-blue-600 to-indigo-700 bg-clip-text text-transparent mb-4">
+            <h2 className="text-4xl md:text-5xl p-2 font-bold bg-gradient-to-r from-orange-600 via-red-600 to-pink-700 bg-clip-text text-transparent mb-4">
               Electrical Power Management
             </h2>
-            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-40 h-1 bg-gradient-to-r from-purple-500 via-blue-500 to-indigo-500 rounded-full"></div>
+            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-40 h-1 bg-gradient-to-r from-orange-600 via-red-600 to-pink-700 rounded-full"></div>
           </div>
           <p className="text-xl text-slate-600 max-w-4xl mx-auto mt-8 leading-relaxed font-medium">
             Reliable power quality solutions engineered for excellence and automation needs
@@ -303,17 +303,17 @@ const ElectricalPower = () => {
           <div className={`flex justify-center mt-12 transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
             <div className="flex gap-8 bg-white/60 backdrop-blur-md px-8 py-4 rounded-2xl shadow-lg border border-white/50">
               <div className="text-center">
-                <div className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">2500</div>
+                <div className="text-2xl font-bold bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent">2500</div>
                 <div className="text-sm text-slate-600">Max KVA</div>
               </div>
               <div className="w-px bg-slate-300"></div>
               <div className="text-center">
-                <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">100%</div>
+                <div className="text-2xl font-bold bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent">100%</div>
                 <div className="text-sm text-slate-600">Protection</div>
               </div>
               <div className="w-px bg-slate-300"></div>
               <div className="text-center">
-                <div className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">24/7</div>
+                <div className="text-2xl font-bold bg-gradient-to-r from-pink-600 to-orange-600 bg-clip-text text-transparent">24/7</div>
                 <div className="text-sm text-slate-600">Support</div>
               </div>
             </div>
@@ -336,15 +336,15 @@ const ElectricalPower = () => {
         <div className={`flex justify-center mt-16 transform transition-all duration-1000 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           <div className="flex items-center space-x-6">
             <div className="flex space-x-2">
-              <div className="w-3 h-3 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full animate-pulse"></div>
-              <div className="w-3 h-3 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full animate-pulse delay-100"></div>
-              <div className="w-3 h-3 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full animate-pulse delay-200"></div>
+              <div className="w-3 h-3 bg-gradient-to-r from-orange-500 to-red-500 rounded-full animate-pulse"></div>
+              <div className="w-3 h-3 bg-gradient-to-r from-red-500 to-pink-500 rounded-full animate-pulse delay-100"></div>
+              <div className="w-3 h-3 bg-gradient-to-r from-pink-500 to-orange-500 rounded-full animate-pulse delay-200"></div>
             </div>
-            <Zap className="w-8 h-8 text-purple-500/60 animate-pulse" />
+            <Zap className="w-8 h-8 text-red-500/60 animate-pulse" />
             <div className="flex space-x-2">
-              <div className="w-3 h-3 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full animate-pulse delay-300"></div>
-              <div className="w-3 h-3 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full animate-pulse delay-400"></div>
-              <div className="w-3 h-3 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full animate-pulse delay-500"></div>
+              <div className="w-3 h-3 bg-gradient-to-r from-orange-500 to-red-500 rounded-full animate-pulse delay-300"></div>
+              <div className="w-3 h-3 bg-gradient-to-r from-red-500 to-pink-500 rounded-full animate-pulse delay-400"></div>
+              <div className="w-3 h-3 bg-gradient-to-r from-pink-500 to-orange-500 rounded-full animate-pulse delay-500"></div>
             </div>
           </div>
         </div>

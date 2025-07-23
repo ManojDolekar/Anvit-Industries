@@ -1,6 +1,18 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Building2, Star, Award, Users, ChevronDown, ChevronUp, Sparkles } from 'lucide-react';
+import SpotlightCard from '../common/animations/SpotlightCard';
+import logo from '../common/assets/companyLogos/companylogo.png'
+import logo1 from '../common/assets/companyLogos/logo1.png'
+import logo2 from '../common/assets/companyLogos/logo2.png'
+import logo3 from '../common/assets/companyLogos/logo3.png'
+import logo4 from '../common/assets/companyLogos/logo4.png'
+import logo5 from '../common/assets/companyLogos/logo5.png'
+import logo6 from '../common/assets/companyLogos/logo6.png'
+import logo7 from '../common/assets/companyLogos/logo7.png'
+import logo8 from '../common/assets/companyLogos/logo8.png'
+import logo9 from '../common/assets/companyLogos/logo9.png'
+import logo10 from '../common/assets/companyLogos/logo10.png'
 
 const fadeInUp = {
     hidden: { opacity: 0, y: 40 },
@@ -59,119 +71,119 @@ const scaleIn = {
 
 const customers = [
     {
-        name: 'BELMARK INDUSTRIES',
-        industry: 'Manufacturing',
-        logo: '🏭',
-        color: 'from-emerald-500 to-teal-600'
-    },
-    {
-        name: 'PLANET HYDRAULICS',
-        industry: 'Hydraulic Systems',
-        logo: '🌍',
-        color: 'from-blue-500 to-cyan-600'
-    },
-    {
-        name: 'VOLTON ENGINEERS',
-        industry: 'Engineering',
-        logo: '⚡',
-        color: 'from-yellow-500 to-orange-600'
-    },
-    {
-        name: 'WATER CREATIONS',
-        industry: 'Water Management',
-        logo: '💧',
-        color: 'from-cyan-500 to-blue-600'
-    },
-    {
-        name: 'PEZ INDIA PVT LTD',
-        industry: 'Manufacturing',
-        logo: '🏢',
-        color: 'from-purple-500 to-indigo-600'
-    },
-    {
-        name: 'CHIMAHO HYDRAULICS',
-        industry: 'Hydraulic Systems',
-        logo: '🔧',
-        color: 'from-red-500 to-pink-600'
-    },
-    {
-        name: 'NP HYDRAULICS',
-        industry: 'Hydraulic Solutions',
-        logo: '🛠️',
-        color: 'from-green-500 to-emerald-600'
-    },
-    {
-        name: 'RELIANCE HYDRAULICS',
-        industry: 'Industrial Equipment',
-        logo: '⚙️',
-        color: 'from-slate-500 to-gray-600'
-    },
-    {
-        name: 'SHUBH ENGINEER & TRADERS',
-        industry: 'Engineering & Trading',
-        logo: '🎯',
-        color: 'from-rose-500 to-red-600'
-    },
-    {
-        name: 'OMNEITY GROUP',
-        industry: 'Technology Solutions',
-        logo: '🚀',
-        color: 'from-violet-500 to-purple-600'
-    },
-    {
-        name: 'BELGAUM HYDRO POWER',
-        industry: 'Power Generation',
-        logo: '⚡',
-        color: 'from-amber-500 to-yellow-600'
-    },
-    {
-        name: 'SNEHAL TRADING CORPORATION',
-        industry: 'Trading & Commerce',
-        logo: '📊',
-        color: 'from-teal-500 to-cyan-600'
-    },
-    {
-        name: 'KUSHVA POOLS',
-        industry: 'Pool Solutions',
-        logo: '🏊',
-        color: 'from-sky-500 to-blue-600'
-    },
-    {
-        name: 'HYDRO SQUARE',
-        industry: 'Hydraulic Equipment',
-        logo: '🔷',
-        color: 'from-indigo-500 to-blue-600'
-    },
-    {
-        name: 'BHAVIKA HYDRAULICS',
-        industry: 'Hydraulic Systems',
-        logo: '🏗️',
-        color: 'from-orange-500 to-red-600'
-    },
-    {
-        name: 'AUDUMBER ENG. WORKS & CRANE SERVICE',
-        industry: 'Engineering & Crane Services',
-        logo: '🏗️',
-        color: 'from-lime-500 to-green-600'
-    },
-    {
-        name: 'PRECISION ENGINEERS',
-        industry: 'Precision Engineering',
-        logo: '🎯',
-        color: 'from-pink-500 to-rose-600'
-    },
-    {
-        name: 'HINDUSTAN ENGINEERS',
-        industry: 'Engineering Solutions',
-        logo: '🔨',
-        color: 'from-emerald-500 to-green-600'
-    },
-    {
-        name: 'JAL VALVE',
-        industry: 'Valve Manufacturing',
-        logo: '🔄',
-        color: 'from-cyan-500 to-teal-600'
-    },
+    name: 'BELMARK INDUSTRIES',
+    industry: 'Manufacturing',
+    logo: logo,
+    color: 'from-emerald-500 to-teal-600'
+  },
+  {
+    name: 'PLANET HYDRAULICS',
+    industry: 'Hydraulic Systems',
+    logo: logo2,
+    color: 'from-blue-500 to-cyan-600'
+  },
+  {
+    name: 'VOLTON ENGINEERS',
+    industry: 'Engineering',
+    logo: logo3,
+    color: 'from-yellow-500 to-orange-600'
+  },
+  {
+    name: 'WATER CREATIONS',
+    industry: 'Water Management',
+    logo: logo4,
+    color: 'from-cyan-500 to-blue-600'
+  },
+  {
+    name: 'PEZ INDIA PVT LTD',
+    industry: 'Manufacturing',
+    logo: logo5,
+    color: 'from-purple-500 to-indigo-600'
+  },
+  {
+    name: 'CHIMAHO HYDRAULICS',
+    industry: 'Hydraulic Systems',
+    logo: logo6,
+    color: 'from-red-500 to-pink-600'
+  },
+  {
+    name: 'NP HYDRAULICS',
+    industry: 'Hydraulic Solutions',
+    logo: logo7,
+    color: 'from-green-500 to-emerald-600'
+  },
+  {
+    name: 'RELIANCE HYDRAULICS',
+    industry: 'Industrial Equipment',
+    logo: logo8,
+    color: 'from-slate-500 to-gray-600'
+  },
+  {
+    name: 'SHUBH ENGINEER & TRADERS',
+    industry: 'Engineering & Trading',
+    logo: logo9,
+    color: 'from-rose-500 to-red-600'
+  },
+  {
+    name: 'OMNEITY GROUP',
+    industry: 'Technology Solutions',
+    logo: logo10,
+    color: 'from-violet-500 to-purple-600'
+  },
+  {
+    name: 'BELGAUM HYDRO POWER',
+    industry: 'Power Generation',
+    logo: logo1,
+    color: 'from-amber-500 to-yellow-600'
+  },
+  {
+    name: 'SNEHAL TRADING CORPORATION',
+    industry: 'Trading & Commerce',
+    logo: logo4,
+    color: 'from-teal-500 to-cyan-600'
+  },
+  {
+    name: 'KUSHVA POOLS',
+    industry: 'Pool Solutions',
+    logo: logo3,
+    color: 'from-sky-500 to-blue-600'
+  },
+  {
+    name: 'HYDRO SQUARE',
+    industry: 'Hydraulic Equipment',
+    logo: logo2,
+    color: 'from-indigo-500 to-blue-600'
+  },
+  {
+    name: 'BHAVIKA HYDRAULICS',
+    industry: 'Hydraulic Systems',
+    logo: logo5,
+    color: 'from-orange-500 to-red-600'
+  },
+  {
+    name: 'AUDUMBER ENG. WORKS & CRANE SERVICE',
+    industry: 'Engineering & Crane Services',
+    logo: logo8,
+    color: 'from-lime-500 to-green-600'
+  },
+  {
+    name: 'PRECISION ENGINEERS',
+    industry: 'Precision Engineering',
+    logo: logo7,
+    color: 'from-pink-500 to-rose-600'
+  },
+  {
+    name: 'HINDUSTAN ENGINEERS',
+    industry: 'Engineering Solutions',
+    logo: logo6,
+    color: 'from-emerald-500 to-green-600'
+  },
+  {
+    name: 'JAL VALVE',
+    industry: 'Valve Manufacturing',
+    logo: logo10,
+    color: 'from-cyan-500 to-teal-600'
+  },
 ];
 
 const OurCustomers = () => {
@@ -184,7 +196,7 @@ const OurCustomers = () => {
     };
 
     return (
-        <section id="customers" className="relative min-h-screen bg-gradient-to-br from-purple-50 via-red-50 to-pink-50 py-20 font-poppins overflow-hidden">
+        <section id="customers" className="relative min-h-screen bg-white py-20 font-poppins overflow-hidden">
             {/* Animated Background Elements */}
             <div className="absolute inset-0">
                 <motion.div 
@@ -267,16 +279,16 @@ const OurCustomers = () => {
                     variants={scaleIn}
                 >
                     <motion.div 
-                        className="inline-flex items-center gap-2 px-6 py-3 bg-white/90 backdrop-blur-sm rounded-full border-2 border-orange-200/50 mb-6 shadow-xl"
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-indigo-200/50 mb-6 shadow-lg"
                         whileHover={{ scale: 1.05, y: -3 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     >
-                        <Sparkles className="w-5 h-5 text-orange-600" />
+                        <Sparkles className="w-4 h-4 text-orange-600" />
                         <span className="text-orange-700 font-semibold">Trusted Partnerships</span>
                     </motion.div>
 
                     <motion.h2
-                        className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-orange-600 via-red-600 to-pink-700 bg-clip-text text-transparent mb-4"
+                        className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-orange-600 via-red-600 to-pink-700 bg-clip-text text-transparent mb-4"
                         variants={fadeInUp}
                     >
                         Our Valued Customers
@@ -292,51 +304,18 @@ const OurCustomers = () => {
 
                 {/* Initially Visible Customers */}
                 <motion.div 
-                    className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-8"
+                    className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1.5 mb-8"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.1 }}
                 >
                     {visibleCustomers.slice(0, 5).map((customer, index) => (
-                        <motion.div
-                            key={customer.name}
-                            className="group relative bg-white/80 backdrop-blur-sm cursor-pointer rounded-3xl p-6 shadow-xl border-2 border-white/60 hover:shadow-2xl hover:scale-105 transition-all duration-400"
-                            variants={fadeInUp}
-                            custom={index * 0.1}
-                            whileHover={{ 
-                                y: -12,
-                                boxShadow: "0 25px 50px -12px rgba(251, 146, 60, 0.25)"
-                            }}
-                        >
-                            {/* Logo Area */}
-                            <div className="flex justify-center mb-4">
-                                <motion.div 
-                                    className={`w-18 h-18 bg-gradient-to-br ${customer.color} rounded-3xl flex items-center justify-center text-2xl shadow-xl group-hover:scale-110 transition-transform`}
-                                    whileHover={{ rotate: 15, scale: 1.2 }}
-                                    transition={{ type: "spring", stiffness: 300, damping: 10 }}
-                                >
-                                    {customer.logo}
-                                </motion.div>
-                            </div>
-
-                            {/* Company Name */}
-                            <h3 className="text-sm font-bold text-slate-800 text-center mb-3 leading-tight min-h-[3rem] flex items-center justify-center">
-                                {customer.name}
-                            </h3>
-
-                            {/* Industry Tag */}
-                            <div className="text-center">
-                                <span className="inline-block px-3 py-2 text-xs font-semibold bg-gradient-to-r from-orange-100 to-red-100 text-orange-800 rounded-full border-2 border-orange-200/50">
-                                    {customer.industry}
-                                </span>
-                            </div>
-
-                            {/* Hover Glow Effect */}
-                            <motion.div
-                                className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${customer.color} opacity-0 group-hover:opacity-10 transition-opacity duration-400`}
-                                initial={false}
-                            />
-                        </motion.div>
+                        <SpotlightCard>
+                                <div className='w-full max-w-lg  h-[8em] grid grid-rows-2 items-center justify-center'>
+                                    <div className=' flex justify-center items-center'> <img src={customer.logo} className='w-20 h-20'/> </div>
+                                    <h3 className=' text-black/80 mt-6 font-semibold text-center'>{customer.name}</h3>
+                                </div>
+                        </SpotlightCard>
                     ))}
                 </motion.div>
 
@@ -344,51 +323,20 @@ const OurCustomers = () => {
                 <AnimatePresence>
                     {showAll && (
                         <motion.div 
-                            className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-8 overflow-hidden"
+                            className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1.5 mb-8 overflow-hidden"
                             initial="hidden"
                             animate="visible"
                             exit="exit"
                         >
                             {hiddenCustomers.map((customer, index) => (
-                                <motion.div
-                                    key={customer.name}
-                                    className="group relative bg-white/80 backdrop-blur-sm cursor-pointer rounded-3xl p-6 shadow-xl border-2 border-white/60 hover:shadow-2xl hover:scale-105 transition-all duration-400"
-                                    variants={expandVariants}
-                                    custom={index * 0.05}
-                                    whileHover={{ 
-                                        y: -12,
-                                        boxShadow: "0 25px 50px -12px rgba(251, 146, 60, 0.25)"
-                                    }}
-                                >
-                                    {/* Logo Area */}
-                                    <div className="flex justify-center mb-4">
-                                        <motion.div 
-                                            className={`w-18 h-18 bg-gradient-to-br ${customer.color} rounded-3xl flex items-center justify-center text-2xl shadow-xl group-hover:scale-110 transition-transform`}
-                                            whileHover={{ rotate: 15, scale: 1.2 }}
-                                            transition={{ type: "spring", stiffness: 300, damping: 10 }}
-                                        >
-                                            {customer.logo}
-                                        </motion.div>
-                                    </div>
+                                <SpotlightCard>
+                                
+                                <div className='w-full max-w-lg gap-y-10  h-[8em] grid grid-rows-2 items-center justify-center'>
+                                    <div className=' flex justify-center items-center'> <img src={customer.logo} className='w-20 h-20'/> </div>
+                                    <h3 className=' text-black/80 font-semibold text-center p-2 '>{customer.name}</h3>
+                                </div>
 
-                                    {/* Company Name */}
-                                    <h3 className="text-sm font-bold text-slate-800 text-center mb-3 leading-tight min-h-[3rem] flex items-center justify-center">
-                                        {customer.name}
-                                    </h3>
-
-                                    {/* Industry Tag */}
-                                    <div className="text-center">
-                                        <span className="inline-block px-3 py-2 text-xs font-semibold bg-gradient-to-r from-orange-100 to-red-100 text-orange-800 rounded-full border-2 border-orange-200/50">
-                                            {customer.industry}
-                                        </span>
-                                    </div>
-
-                                    {/* Hover Glow Effect */}
-                                    <motion.div
-                                        className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${customer.color} opacity-0 group-hover:opacity-10 transition-opacity duration-400`}
-                                        initial={false}
-                                    />
-                                </motion.div>
+                                </SpotlightCard>
                             ))}
                         </motion.div>
                     )}
@@ -404,7 +352,7 @@ const OurCustomers = () => {
                 >
                     <motion.button
                         onClick={toggleShowAll}
-                        className="group relative inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-orange-500 via-red-500 to-pink-600 rounded-full text-white font-bold text-lg shadow-2xl shadow-orange-200/50 overflow-hidden"
+                        className="group relative inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-orange-500 via-red-500 to-pink-600 rounded-full text-white font-semibold text-[1.02em] shadow-2xl shadow-orange-200/50 overflow-hidden"
                         whileHover={{ 
                             scale: 1.05,
                             y: -3,

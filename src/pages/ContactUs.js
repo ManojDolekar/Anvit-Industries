@@ -52,14 +52,14 @@ function ContactUs() {
   ];
 
   return (
-    <div className="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 min-h-screen flex justify-center items-center py-20 px-6 lg:px-24">
+    <div className="bg-gradient-to-t from-slate-50 via-pink/90 to-white min-h-screen flex justify-center items-center py-20 px-6 lg:px-24">
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16">
           <div className="inline-block">
-            <h2 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-slate-800 via-blue-800 to-indigo-800 bg-clip-text text-transparent mb-6 relative">
+            <h2 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-orange-600 via-red-600 to-pink-700 bg-clip-text text-transparent mb-6 relative">
               Contact Us
-              <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full"></div>
+              <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-orange-500 to-pink-600 rounded-full"></div>
             </h2>
           </div>
           <p className="text-xl text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed">
@@ -68,7 +68,7 @@ function ContactUs() {
           <div className="flex justify-center">
             <div className="bg-white/70 backdrop-blur-sm border border-white/30 rounded-full px-6 py-3 shadow-lg">
               <p className="text-slate-700 font-medium flex items-center gap-2">
-                <Send size={18} className="text-blue-600" />
+                <Send size={18} className="text-orange-600" />
                 Ready to get started? Reach out to us!
               </p>
             </div>

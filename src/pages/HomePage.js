@@ -206,7 +206,7 @@ export default function SwiperCarousel() {
         ))}
 
         {/* Navigation Arrows */}
-        <button
+        {/* <button
           onClick={prevSlide}
           disabled={isTransitioning}
           className="absolute left-6 md:left-12 top-1/2 -translate-y-1/2 z-30 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white p-4 md:p-5 rounded-full transition-all duration-300 border border-white/20 hover:border-white/40 hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed group"
@@ -220,7 +220,7 @@ export default function SwiperCarousel() {
           className="absolute right-6 md:right-12 top-1/2 -translate-y-1/2 z-30 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white p-4 md:p-5 rounded-full transition-all duration-300 border border-white/20 hover:border-white/40 hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed group"
         >
           <ChevronRight className="w-6 h-6 md:w-8 md:h-8 transition-transform group-hover:translate-x-1" />
-        </button>
+        </button> */}
 
         {/* Controls */}
         {/* <div className="absolute top-6 md:top-12 right-6 md:right-12 z-30 flex gap-4">

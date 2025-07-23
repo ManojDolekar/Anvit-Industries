@@ -66,7 +66,7 @@ function OurService() {
                     Our Services
                 </h1>
             </div>
-            <div className=' w-full items-center pt-[300px] md:pt-[400px] mx-7 grid md:grid-cols-3 sm:grid-cols-1 gap-4'>
+            <div className=' w-full items-start pt-[300px] md:pt-[400px] flex justify-center flex-wrap gap-4'>
                 {serviceData.map(data=>(
                 <ServiceCard data={data}/>
                 ))}

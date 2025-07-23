@@ -82,9 +82,9 @@ const VisionMission = () => {
         </div>
 
         {/* Cards Layout */}
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2  gap-8">
           {/* Vision & Mission Column */}
-          <div className="space-y-8">
+          <div className=" space-y-8">
             {cardData.slice(0, 2).map((card) => {
               const IconComponent = card.icon;
               return (
@@ -181,10 +181,6 @@ const VisionMission = () => {
                       </div>
                     </div>
 
-                    {/* Premium Badge */}
-                    <div className="absolute top-4 right-4 bg-gradient-to-r from-purple-500 to-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold opacity-80">
-                      ✨ Premium
-                    </div>
 
                     {/* Floating Sparkles on Hover */}
                     {activeCard === card.id && (

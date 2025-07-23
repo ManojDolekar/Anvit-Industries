@@ -69,7 +69,7 @@ const Services = () => {
   return (
     <section
   id="services"
-  className="relative  font-poppins text-black overflow-hidden bg-[#F1F8FE]"
+  className="relative  font-poppins text-black overflow-hidden "
 >
   
 

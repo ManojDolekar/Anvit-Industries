@@ -97,6 +97,7 @@ import connectwell from "../common/assets/partners/connectwell.jpg";
 import polycab from "../common/assets/partners/polycab.png";
 import autonics from "../common/assets/partners/autonics.jpg";
 import autocad from "../common/assets/partners/autocad.png";
+import background from "../common/assets/partners/pattern6.png"
 import controlwell from "../common/assets/partners/controlwell.jpg";
 import bch from "../common/assets/partners/bch.jpg";
 import phoenix from "../common/assets/partners/phoenix.png";
@@ -112,21 +113,26 @@ const logos = [
 
 const OurPartners = () => {
   return (
-    <section id="partners" className="w-full py-16 bg-gradient-to-t from-slate-50 via-white/90 to-pink-50 font-poppins text-black">
-      <div className="w-full mx-auto px-2">
-        <h2 className="text-5xl md:text-5xl font-bold text-center bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-700 bg-clip-text text-transparent mb-4">
+      <section
+  id="partners"
+  className="w-full py-2 font-poppins text-black bg-gradient-to-t from-white via-[#86A8E7]/80 to-white"
+  
+>
+      <div className="w-full pt-8 mx-auto px-2"
+      style={{ backgroundImage: `url(${background})`,backgroundSize:'cover', backgroundPosition: 'center' }}>
+        <h2 className="text-5xl  md:text-5xl font-bold text-center bg-gradient-to-r from-gray-500 via-white/80 to-gray-600 bg-clip-text text-transparent mt-14 my-4">
           Our Channel Partners
         </h2>
-        <p className="text-xl text-slate-600 max-w-4xl mx-auto mb-2 leading-relaxed">
+        <p className="text-xl text-slate-400 max-w-4xl mx-auto mb-24 leading-relaxed">
             Collaborating with industry leaders to deliver excellence and innovation in every project
           </p>
 
         <div className="relative overflow-hidden">
-          <div className="flex gap-10 animate-marquee p-2 whitespace-nowrap">
+          <div className="flex gap-10 animate-marquee p-2 pt-10 pb-10 whitespace-nowrap ">
             {[...logos, ...logos].map((logo, idx) => (
               <div
                 key={idx}
-                className="min-w-[140px] h-[100px] bg-white rounded-xl shadow-lg hover:scale-110 transition-transform duration-300 flex items-center justify-center"
+                className="min-w-[140px] h-[100px] bg-white rounded-xl shadow-[#606585] shadow-2xl hover:scale-110 transition-transform duration-300 flex items-center justify-center"
               >
                 <img
                   src={logo}

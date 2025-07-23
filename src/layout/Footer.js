@@ -17,27 +17,27 @@ function Footer() {
         }
     };
 
-    const activeClass = 'text-commonColor font-semibold';
-    const normalClass = 'hover:text-commonColor';
+    const activeClass = 'text-blue-400 font-semibold';
+    const normalClass = 'hover:text-blue-400';
 
     return (
-        <footer className="bg-[#e8f0f4] text-[#161b22] py-12 px-6 md:px-12 transition-colors duration-300">
+        <footer className="font-poppins bg-[#334157] text-[#161b22] py-12 px-6 md:px-12 transition-colors duration-300">
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2  gap-10">
 
                 {/* Branding */}
                 <div>
-                    <h3 className="text-2xl font-josefin font-bold text-commonColor mb-3">
-                        Anvit Industries
+                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-red-600 bg-clip-text text-transparent">
+                                Anvit Industries
                     </h3>
-                    <p className="text-sm font-raleway text-justify">
+                    <p className="text-sm font-raleway text-white text-justify">
                         Trusted experts in Electrical Power Management & Industrial Automation. Delivering reliable and efficient solutions to businesses.
                     </p>
                 </div>
 
                 {/* Navigation */}
                 <div className='flex flex-col items-center '>
-                    <h4 className="font-semibold font-josefin mb-3">Quick Links</h4>
-                    <ul className="flex flex-col items-center gap-2 text-sm font-raleway ">
+                    <h4 className="font-semibold text-white mb-3">Quick Links</h4>
+                    <ul className="flex flex-col text-white items-start gap-2 text-sm  ">
                         <li>
                             <button onClick={() => handleLinkClick('home')} className={activeSection === 'home' ? activeClass : normalClass}>
                                 Home
@@ -69,9 +69,10 @@ function Footer() {
             </div>
 
             {/* Bottom Note */}
-            <div className="mt-10 text-center text-xs border-t font-raleway pt-6 border-darkAccent/10 dark:border-lightAccent/10">
+            <div className="mt-10 text-center text-white text-sm border-t font-raleway pt-6 border-darkAccent/10 dark:border-lightAccent/10">
                 &copy; 2025   Anvit Industries. All rights reserved.
             </div>
+            <div className=' text-center text-xs text-white '> Designed and developed by Lifofy Tech</div>
         </footer>
     );
 }
