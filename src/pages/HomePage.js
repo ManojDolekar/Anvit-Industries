@@ -1,5 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { Play, Pause, ChevronLeft, ChevronRight } from 'lucide-react';
+import pannel1 from '../common/assets/Images/pannel.png'
+import pannel2 from '../common/assets/Images/pannel2.png'
+import pannel3 from '../common/assets/Images/pannel3.jpg'
+import pannel4 from '../common/assets/Images/pannel4.jpg'
 
 // Since we can't import Swiper in this environment, I'll create a custom implementation
 // that mimics Swiper's functionality with modern design
@@ -7,7 +11,7 @@ import { Play, Pause, ChevronLeft, ChevronRight } from 'lucide-react';
 const slides = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&h=1080&fit=crop&q=80",
+    image: pannel1,
     title: "Mountain Adventures",
     subtitle: "Explore breathtaking peaks",
     description: "Discover the world's most stunning mountain landscapes with guided tours and thrilling adventures.",
@@ -15,7 +19,7 @@ const slides = [
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1920&h=1080&fit=crop&q=80",
+    image: pannel2,
     title: "Ocean Serenity",
     subtitle: "Dive into tranquility",
     description: "Experience the calming power of crystal-clear waters and pristine beaches around the globe.",
@@ -23,7 +27,7 @@ const slides = [
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1501436513145-30f24e19fcc4?w=1920&h=1080&fit=crop&q=80",
+    image:pannel3,
     title: "Desert Wonders",
     subtitle: "Journey through golden sands",
     description: "Witness the magical beauty of endless desert horizons and ancient dunes.",
@@ -31,7 +35,7 @@ const slides = [
   },
   {
     id: 4,
-    image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920&h=1080&fit=crop&q=80",
+    image: pannel4,
     title: "Forest Mysteries",
     subtitle: "Enter enchanted woodlands",
     description: "Discover hidden secrets in ancient forests filled with wildlife and natural wonders.",
@@ -39,7 +43,7 @@ const slides = [
   }
 ];
 
-export default function SwiperCarousel() {
+export default function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoplay, setIsAutoplay] = useState(true);
   const [isTransitioning, setIsTransitioning] = useState(false);

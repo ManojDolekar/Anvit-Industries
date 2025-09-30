@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
-import { useLocation } from 'react-router-dom';
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -8,12 +7,11 @@ function Navbar() {
     const [isOnTop, setIsOnTop] = useState(true);
     const [activeSection, setActiveSection] = useState('home');
 
-    const location = useLocation();
-
     useEffect(() => {
+        console.log('Active section:', activeSection);
         let timeoutId = null;
         const handleScroll = () => {
-            const isTop = window.scrollY === 0 ;
+            const isTop = window.scrollY <= 2;
             setIsOnTop(isTop);
             setIsScrolling(true);
 
@@ -26,6 +24,22 @@ function Navbar() {
             clearTimeout(timeoutId);
             window.removeEventListener('scroll', handleScroll);
         };
+    }, [activeSection]);
+
+    // Set active section based on current route (using window.location instead of react-router)
+    useEffect(() => {
+        const path = window.location.pathname;
+        if (path === '/') {
+            setActiveSection('home');
+        } else if (path === '/services') {
+            setActiveSection('services');
+        } else if (path === '/vision') {
+            setActiveSection('vision');
+        } else if (path === '/about') {
+            setActiveSection('about');
+        } else if (path === '/contact') {
+            setActiveSection('contact');
+        }
     }, []);
 
     const handleScrollNav = (sectionId) => {
@@ -37,34 +51,50 @@ function Navbar() {
         }
     };
 
+    const handleNavClick = (item) => {
+        setActiveSection(item.id);
+        setIsOpen(false);
+        
+        // If it has an onClick function (for scroll navigation), call it
+        if (item.onClick) {
+            item.onClick();
+        }
+    };
+
     const navItems = [
         { id: 'home', label: 'Home', href: '/' },
         { id: 'services', label: 'Services', href: '/services' },
         { id: 'vision', label: 'Vision', href: '/vision' },
-        { id: 'about', label: 'About', onClick: () => handleScrollNav('about'), href: '/about' },
-        { id: 'contact', label: 'Contact', onClick: () => handleScrollNav('contact'), href: '/contact' },
+        { 
+            id: 'about', 
+            label: 'About', 
+            href: '/about',
+        },
+        { 
+            id: 'contact', 
+            label: 'Contact', 
+            href: '/contact',
+        },
     ];
 
     const navbarAnimationClass = isOnTop
         ? 'translate-y-0 opacity-100'
         : isScrolling
-        ? '-translate-y-full opacity-0 pointer-events-none'
-        : 'translate-y-0 opacity-100';
+            ? '-translate-y-full opacity-0 pointer-events-none'
+            : 'translate-y-0 opacity-100';
 
     return (
         <nav
-            className={`w-full z-50 fixed top-0 left-0 transform transition-all duration-500 ease-in-out ${navbarAnimationClass} ${
-                isOnTop ? 'bg-transparent' : 'bg-[#ececec] backdrop-blur-md shadow-xl border-b border-blue-200/50'
-            }`}
+            className={`w-full z-50 fixed left-0 transform transition-all duration-500 ease-in-out ${navbarAnimationClass} top-0`}
         >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between items-center h-16 lg:h-20">
-                    
-                    {/* ✅ Original Logo Section Preserved */}
+            <div className="w-full mx-auto px-4 sm:px-6 lg:px-14 bg-gradient-to-b from-cyan-100/80 to-white/80 backdrop-blur-md">
+                <div className="flex justify-between items-center h-16 lg:h-16">
+
+                    {/* Logo Section */}
                     <div className="flex items-center space-x-2 sm:space-x-3 group cursor-pointer">
                         <div className="relative">
                             <div className="absolute inset-0 transition-all duration-300"></div>
-                            <div className="relative p-1.5 sm:p-2 rounded-lg  transition-all duration-500">
+                            <div className="relative p-1.5 sm:p-2 rounded-lg transition-all duration-500">
                                 <svg
                                     width="28"
                                     height="28"
@@ -72,7 +102,7 @@ function Navbar() {
                                     fill="none"
                                     xmlns="http://www.w3.org/2000/svg"
                                     className="sm:w-8 sm:h-8 transform group-hover:scale-110 transition-transform duration-300"
-                                    >
+                                >
                                     <path
                                         d="M33 14C35.97 14 38.94 14 42 14C42 23.57 42 33.14 42 43C39.03 43 36.06 43 33 43C33 33.43 33 23.86 33 14Z"
                                         fill="#FD0000"
@@ -86,7 +116,6 @@ function Navbar() {
                                         fill="#0000FD"
                                     />
                                 </svg>
-
                             </div>
                         </div>
                         <div className="flex flex-col">
@@ -100,44 +129,30 @@ function Navbar() {
                     <ul className="hidden lg:flex items-center space-x-6 xl:space-x-8">
                         {navItems.map((item) => (
                             <li key={item.id} className="relative group">
-                                {(item.href === '/services' || item.href === '/vision') ? (
-                                    <a
-                                        href={item.href}
-                                        onClick={() => setActiveSection(item.id)}
-                                        className={`relative px-3 py-2 text-sm xl:text-base font-semibold transition-all duration-300 ${
-                                            activeSection === item.id
-                                                ? 'text-blue-600'
-                                                : !isOnTop
-                                                    ? 'text-gray-700 hover:text-blue-600'
-                                                    : 'text-[#8cb2c3] hover:text-blue-600'
-                                        }`}
-                                    >
-                                        {item.label}
-                                        <div className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-500 to-cyan-400 transform ${
-                                            activeSection === item.id ? 'scale-x-100' : 'scale-x-0'
-                                        } transition-transform duration-300`}></div>
-                                        <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-300 to-cyan-300 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                                    </a>
-                                ) : (
-                                    <a href={item.href}>
-                                        <button
-                                            onClick={item.onClick}
-                                            className={`relative px-3 py-2 text-sm xl:text-base font-semibold transition-all duration-300 ${
-                                                activeSection === item.id
-                                                    ? 'text-blue-600'
-                                                    : !isOnTop
-                                                        ? 'text-gray-700 hover:text-blue-600'
-                                                        : 'text-[#8cb2c3] hover:text-blue-600'
-                                            }`}
-                                        >
-                                            {item.label}
-                                            <div className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-500 to-cyan-400 transform ${
-                                                activeSection === item.id ? 'scale-x-100' : 'scale-x-0'
-                                            } transition-transform duration-300`}></div>
-                                            <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-300 to-cyan-300 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                                        </button>
-                                    </a>
-                                )}
+                                <a
+                                    href={item.href}
+                                    onClick={(e) => {
+                                        // For scroll-based navigation (about, contact), prevent default
+                                        if (item.onClick) {
+                                            e.preventDefault();
+                                            handleNavClick(item);
+                                        } else {
+                                            // For regular navigation, just set active section
+                                            setActiveSection(item.id);
+                                        }
+                                    }}
+                                    className={`relative px-3 py-2 text-sm xl:text-base font-semibold transition-all duration-300 ${
+                                        activeSection === item.id
+                                            ? 'text-blue-600'
+                                            : 'text-gray-700 hover:text-blue-600'
+                                    }`}
+                                >
+                                    {item.label}
+                                    <div className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-500 to-cyan-400 transform ${
+                                        activeSection === item.id ? 'scale-x-100' : 'scale-x-0'
+                                    } transition-transform duration-300`}></div>
+                                    <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-300 to-cyan-300 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                                </a>
                             </li>
                         ))}
                     </ul>
@@ -165,44 +180,31 @@ function Navbar() {
                         {navItems.map((item, index) => (
                             <li
                                 key={item.id}
-                                className={`transform transition-all duration-300 ${
-                                    isOpen ? 'translate-x-0 opacity-100' : '-translate-x-4 opacity-0'
-                                }`}
+                                className={`transform transition-all duration-300 ${isOpen ? 'translate-x-0 opacity-100' : '-translate-x-4 opacity-0'}`}
                                 style={{ transitionDelay: `${index * 50}ms` }}
                             >
-                                {item.href ? (
-                                    <a
-                                        href={item.href}
-                                        onClick={() => {
+                                <a
+                                    href={item.href}
+                                    onClick={(e) => {
+                                        if (item.onClick) {
+                                            e.preventDefault();
+                                            handleNavClick(item);
+                                        } else {
                                             setActiveSection(item.id);
                                             setIsOpen(false);
-                                        }}
-                                        className={`block px-4 py-3 rounded-lg text-base font-medium transition-all duration-300 ${
-                                            activeSection === item.id
-                                                ? 'bg-blue-50 text-blue-600 border border-blue-200'
-                                                : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
-                                        }`}
-                                    >
-                                        <div className="flex items-center justify-between">
-                                            {item.label}
-                                            <ChevronDown className="w-4 h-4 opacity-50" />
-                                        </div>
-                                    </a>
-                                ) : (
-                                    <button
-                                        onClick={item.onClick}
-                                        className={`w-full text-left px-4 py-3 rounded-lg text-base font-medium transition-all duration-300 ${
-                                            activeSection === item.id
-                                                ? 'bg-blue-50 text-blue-600 border border-blue-200'
-                                                : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
-                                        }`}
-                                    >
-                                        <div className="flex items-center justify-between">
-                                            {item.label}
-                                            <ChevronDown className="w-4 h-4 opacity-50" />
-                                        </div>
-                                    </button>
-                                )}
+                                        }
+                                    }}
+                                    className={`block px-4 py-3 rounded-lg text-base font-medium transition-all duration-300 ${
+                                        activeSection === item.id
+                                            ? 'bg-blue-50 text-blue-600 border border-blue-200'
+                                            : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                                    }`}
+                                >
+                                    <div className="flex items-center justify-between">
+                                        {item.label}
+                                        <ChevronDown className="w-4 h-4 opacity-50" />
+                                    </div>
+                                </a>
                             </li>
                         ))}
                     </ul>
