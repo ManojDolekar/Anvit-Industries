@@ -7,9 +7,9 @@ import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <HashRouter>
+  <BrowserRouter basename="/Anvit-Industries">
     <App />
-  </HashRouter>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
