@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/anvit-industries/static/css/main.24c05e95.css",
-    "main.js": "/anvit-industries/static/js/main.e320ac66.js",
+    "main.js": "/anvit-industries/static/js/main.a224f042.js",
     "static/js/85.191ce1a8.chunk.js": "/anvit-industries/static/js/85.191ce1a8.chunk.js",
     "static/js/35.a151ce25.chunk.js": "/anvit-industries/static/js/35.a151ce25.chunk.js",
     "static/js/209.ab1d67aa.chunk.js": "/anvit-industries/static/js/209.ab1d67aa.chunk.js",
@@ -35,7 +35,7 @@
     "static/media/Siemens.png": "/anvit-industries/static/media/Siemens.c563eb6e80c53c77d0e8.png",
     "index.html": "/anvit-industries/index.html",
     "main.24c05e95.css.map": "/anvit-industries/static/css/main.24c05e95.css.map",
-    "main.e320ac66.js.map": "/anvit-industries/static/js/main.e320ac66.js.map",
+    "main.a224f042.js.map": "/anvit-industries/static/js/main.a224f042.js.map",
     "85.191ce1a8.chunk.js.map": "/anvit-industries/static/js/85.191ce1a8.chunk.js.map",
     "35.a151ce25.chunk.js.map": "/anvit-industries/static/js/35.a151ce25.chunk.js.map",
     "209.ab1d67aa.chunk.js.map": "/anvit-industries/static/js/209.ab1d67aa.chunk.js.map",
@@ -43,6 +43,6 @@
   },
   "entrypoints": [
     "static/css/main.24c05e95.css",
-    "static/js/main.e320ac66.js"
+    "static/js/main.a224f042.js"
   ]
 }
