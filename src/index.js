@@ -7,7 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter basename="/Anvit-Industries">
+  <BrowserRouter basename="/anvit-industries">
     <App />
   </BrowserRouter>
 );
