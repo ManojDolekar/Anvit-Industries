@@ -3,7 +3,7 @@ import Layout from '../layout';
 import ContactUs from '../pages/ContactUs';
 import AboutSection from '../pages/AboutSection';
 const Home = React.lazy(() => import('../pages/Home'));
-const Vission = React.lazy(() => import('../pages/VisionMission'));
+const Vision = React.lazy(() => import('../pages/VisionMission'));
 const Services = React.lazy(() => import('../pages/Services'));
 
 const WebsiteRoutes = [
@@ -12,23 +12,23 @@ const WebsiteRoutes = [
     element: <Layout />,
     children: [
       {
-        path: "/",
+        index:true,
         element: <Home />,
       },
       {
-        path: "/services",
+        path: "services",
         element: <Services />,
       },
       {
-        path: "/vision",
-        element: <Vission />,
+        path: "vision",
+        element: <Vision />,
       },
       {
-        path: "/about",
+        path: "about",
         element: <AboutSection />,
       },
       {
-        path: "/contact",
+        path: "contact",
         element: <ContactUs />,
       },
     ]
